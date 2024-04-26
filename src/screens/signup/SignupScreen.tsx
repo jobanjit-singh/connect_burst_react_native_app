@@ -7,7 +7,8 @@ import CustomButton from '../../components/CustomButton';
 
 const WIDTH = Dimensions.get('window').width;
 
-const LoginScreen = ({navigation} : {navigation: any}) => {
+const SignupScreen = ({navigation} : {navigation:any}) => {
+    const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -19,6 +20,10 @@ const LoginScreen = ({navigation} : {navigation: any}) => {
     setPassword(text);
   };
 
+  const handleOnChangeUsername = (text:string) => {
+    setUsername(text)
+  }
+
   return (
     <View style={styles.baseContainer}>
       <View style={styles.logoBaseContainer}>
@@ -26,9 +31,17 @@ const LoginScreen = ({navigation} : {navigation: any}) => {
           source={require('../../assets/Icons/MainLogo.png')}
           style={styles.logoImage}
         />
-        <Text style={styles.loginText}>Login</Text>
+        <Text style={styles.loginText}>Sign Up</Text>
       </View>
       <View style={styles.inputBaseContainer}>
+
+        <InputBox 
+            height={40}
+            value={username}
+            onChangeText={handleOnChangeUsername}
+            placeholder='Enter the username'
+        />
+
         <InputBox
           height={40}
           value={email}
@@ -43,18 +56,23 @@ const LoginScreen = ({navigation} : {navigation: any}) => {
           placeholder="Enter the Password"
         />
 
-        <Text style={styles.dontHaveText}>
-          Don't have account ?{' '}
-          <Text 
-            style={{color: '#00ABF0', fontWeight: 'bold'}}
-            onPress={() => navigation.navigate("SignupScreen")}>SignUp</Text>
+        <Text style={styles.dontHaveText} >
+          Already have account ? <Text 
+          style={{color: '#00ABF0', fontWeight: 'bold'}} 
+            onPress={()=>navigation.pop()}
+          >Login</Text>
         </Text>
+
       </View>
       <View style={styles.buttonBaseContainer}>
-        <CustomButton text="Login" backgroundColor="#00ABF0" color="#FFF" />
+        <CustomButton 
+          text='SignUp'
+          backgroundColor='#00ABF0'
+          color='#FFF'
+        />
       </View>
     </View>
   );
 };
 
-export default LoginScreen;
+export default SignupScreen;

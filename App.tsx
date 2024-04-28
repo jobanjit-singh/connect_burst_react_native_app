@@ -5,6 +5,7 @@ import {} from 'react-native';
 import SplashScreen from './src/screens/splash/SplashScreen';
 import LoginScreen from './src/screens/login/LoginScreen';
 import SignupScreen from './src/screens/signup/SignupScreen';
+import HomeScreen from './src/screens/home/HomeScreen';
 
 const App = () => {
   const Stack = createNativeStackNavigator();
@@ -37,6 +38,16 @@ const App = () => {
         <Stack.Screen 
           name='SignupScreen'
           component={SignupScreen}
+          options={{
+            headerShown: false,
+            contentStyle: {
+              backgroundColor: '#000'
+            }
+          }}
+        />
+        <Stack.Screen 
+          name='HomeScreen'
+          component={HomeScreen}
           options={{
             headerShown: false,
             contentStyle: {

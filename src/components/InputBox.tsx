@@ -6,13 +6,15 @@ const InputBox = ({
   width,
   value,
   onChangeText,
-  placeholder
+  placeholder,
+  secureInput=false
 }: {
   height: number;
   width?: number;
   value: string;
   onChangeText: any;
-  placeholder: string
+  placeholder: string,
+  secureInput?: boolean
 }) => {
 
     const styles = StyleSheet.create({
@@ -23,6 +25,7 @@ const InputBox = ({
             borderWidth: 0.5,
             borderRadius: 10,
             padding: 10,
+            color: '#FFF'
         }
     })
 
@@ -33,6 +36,7 @@ const InputBox = ({
         placeholder={placeholder}
         placeholderTextColor={'#CCC'}
         style={styles.inputStyle}
+        secureTextEntry={secureInput}
     />
   </View>;
 };

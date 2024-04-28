@@ -2,17 +2,22 @@ import React, {useEffect, useRef} from 'react';
 import {Animated, Image, View} from 'react-native';
 
 import {styles} from './Style';
-import { StackActions } from '@react-navigation/native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const SplashScreen = ({navigation}: {navigation: any}) => {
   const imageAnimation = useRef(new Animated.Value(0)).current;
 
-  useEffect(()=>{
-    imageAnimationAnim();
+  const moveToLogin = async () => {
+    await AsyncStorage.getItem('USER_LOGIN').then(response => {
+      setTimeout(() => {
+        navigation.replace(response ? 'HomeScreen' : 'LoginScreen');
+      }, 3000);
+    });
+  };
 
-    setTimeout(()=> {
-        navigation.replace('LoginScreen')
-    }, 5000)
+  useEffect(() => {
+    imageAnimationAnim();
+    moveToLogin();
   }, []);
 
   const imageAnimationAnim = () => {
@@ -38,9 +43,9 @@ const SplashScreen = ({navigation}: {navigation: any}) => {
               },
             ],
             opacity: imageAnimation.interpolate({
-                inputRange: [0, 1],
-                outputRange: [0 ,1]
-            })
+              inputRange: [0, 1],
+              outputRange: [0, 1],
+            }),
           },
         ]}
       />

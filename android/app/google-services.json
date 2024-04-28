@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "508530089200",
+    "project_id": "connectburst",
+    "storage_bucket": "connectburst.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:508530089200:android:513c4eda83e74a5b68b635",
+        "android_client_info": {
+          "package_name": "com.connect_burst_react_native_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD3OdbGsBSV2BUwPmEEOm4HQntW5Bffk8M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

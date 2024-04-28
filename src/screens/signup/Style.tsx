@@ -6,6 +6,8 @@ const HEIGHT = Dimensions.get('window').height;
 export const styles =StyleSheet.create({
     baseContainer: {
         flex: 1,
+        height: HEIGHT,
+        width: WIDTH
     },
     logoBaseContainer:{
         flex: 2,
@@ -22,7 +24,7 @@ export const styles =StyleSheet.create({
         fontWeight: 'bold'
     },
     inputBaseContainer: {
-        flex: 2,
+        flex: 5,
         padding: 20,
         justifyContent: 'space-around'
     },

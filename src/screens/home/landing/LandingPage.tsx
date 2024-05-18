@@ -51,7 +51,7 @@ const LandingPage = () => {
   };
 
   return (
-    <ScrollView style={styles.baseContainer}>
+    <View style={styles.baseContainer}>
       <View style={styles.headerBaseContainer}>
         <View style={styles.headerTitleBaseContainer}>
           <Text style={styles.headerTitleText}>Connect Burst</Text>
@@ -68,17 +68,30 @@ const LandingPage = () => {
       ) : (
         <View style={styles.postListContainer}>
           <FlatList
-            data={[
-              'https://cdn.pixabay.com/photo/2023/12/07/19/45/tiger-8436227_640.jpg',
-              'https://cdn.pixabay.com/photo/2022/11/28/17/47/cosmos-7622740_960_720.jpg',
-              'https://cdn.pixabay.com/photo/2023/05/23/07/05/royal-gramma-basslet-8012082_640.jpg',
-              'https://cdn.pixabay.com/photo/2023/09/16/20/14/ai-generated-8257503_640.jpg',
-            ]}
-            renderItem={handlePostRender}
+            data={[1]}
+            renderItem={({item, index}) => {
+              return (
+                <View>
+                  {index == 0 && (
+                    <View>
+                      <FlatList
+                        data={[
+                          'https://cdn.pixabay.com/photo/2023/12/07/19/45/tiger-8436227_640.jpg',
+                          'https://cdn.pixabay.com/photo/2022/11/28/17/47/cosmos-7622740_960_720.jpg',
+                          'https://cdn.pixabay.com/photo/2023/05/23/07/05/royal-gramma-basslet-8012082_640.jpg',
+                          'https://cdn.pixabay.com/photo/2023/09/16/20/14/ai-generated-8257503_640.jpg',
+                        ]}
+                        renderItem={handlePostRender}
+                      />
+                    </View>
+                  )}
+                </View>
+              );
+            }}
           />
         </View>
       )}
-    </ScrollView>
+    </View>
   );
 };
 

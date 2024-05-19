@@ -42,7 +42,7 @@ export const styles = StyleSheet.create({
         borderRadius: 10
     },
     postHeaderContainer:{
-        paddingBottom: 10
+        paddingVertical: 10
     },
     postHeaderTitle: {
         color: '#FFF',
@@ -51,7 +51,6 @@ export const styles = StyleSheet.create({
 
     },
     postImage:{
-        // width: WIDTH / 3,
         height: WIDTH,
         borderRadius: 8
     },

@@ -6,53 +6,65 @@ import SplashScreen from './src/screens/splash/SplashScreen';
 import LoginScreen from './src/screens/login/LoginScreen';
 import SignupScreen from './src/screens/signup/SignupScreen';
 import HomeScreen from './src/screens/home/HomeScreen';
+import Messages from './src/screens/messages/Messages';
 
 const App = () => {
   const Stack = createNativeStackNavigator();
 
   return (
     <NavigationContainer>
-      <Stack.Navigator
-        initialRouteName='SplashScreen'
-      >
-        <Stack.Screen 
-          name={'SplashScreen'} 
+      <Stack.Navigator initialRouteName="SplashScreen">
+        <Stack.Screen
+          name={'SplashScreen'}
           component={SplashScreen}
           options={{
             headerShown: false,
             contentStyle: {
-              backgroundColor: '#000'
-            }
+              backgroundColor: '#000',
+            },
           }}
         />
-        <Stack.Screen 
-          name='LoginScreen'
+        <Stack.Screen
+          name="LoginScreen"
           component={LoginScreen}
           options={{
             headerShown: false,
             contentStyle: {
-              backgroundColor: '#000'
-            }
+              backgroundColor: '#000',
+            },
           }}
         />
-        <Stack.Screen 
-          name='SignupScreen'
+        <Stack.Screen
+          name="SignupScreen"
           component={SignupScreen}
           options={{
             headerShown: false,
             contentStyle: {
-              backgroundColor: '#000'
-            }
+              backgroundColor: '#000',
+            },
           }}
         />
-        <Stack.Screen 
-          name='HomeScreen'
+        <Stack.Screen
+          name="HomeScreen"
           component={HomeScreen}
           options={{
             headerShown: false,
             contentStyle: {
-              backgroundColor: '#000'
-            }
+              backgroundColor: '#000',
+            },
+          }}
+        />
+        <Stack.Screen
+          name="Message"
+          component={Messages}
+          options={{
+            headerStyle: {
+              backgroundColor: '#000',
+            },
+            headerTintColor: '#FFF',
+            contentStyle: {
+              backgroundColor: '#000',
+            },
           }}
         />
       </Stack.Navigator>

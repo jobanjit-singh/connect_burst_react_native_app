@@ -33,12 +33,21 @@ const HomeScreen = () => {
         tabBarIcon: ({focused, color, size}) => {
           let iconName: string = '';
 
-          if (route.name == 'Home') {
+          if (route.name == 'Home' && !focused) {
             iconName = 'home-outline';
-          } else if (route.name == 'Search') {
+          } else if (route.name == 'Home' && focused) {
+            iconName = 'home'
+          } 
+          else if (route.name == 'Search' && focused) {
             iconName = 'search';
-          } else if (route.name == 'AddPost') {
+          } else if (route.name == 'Search' && !focused) {
+            iconName = 'search-outline';
+          } else if (route.name == 'AddPost' && focused) {
+            iconName = 'add-circle';
+          } else if (route.name == 'AddPost' && !focused) {
             iconName = 'add-circle-outline';
+          } else if (route.name == 'Profile' && focused) {
+            iconName = 'person';
           } else {
             iconName = 'person-outline';
           }
@@ -54,7 +63,7 @@ const HomeScreen = () => {
           borderColor: '#00ABF0',
           borderWidth: 0.6,
           marginVertical: 10,
-          marginHorizontal: WIDTH / 5,
+          marginHorizontal: WIDTH / 3.5,
           position: 'absolute',
           elevation: 10,
         },
@@ -70,13 +79,13 @@ const HomeScreen = () => {
         }}
       />
 
-      <Tab.Screen
+      {/* <Tab.Screen
         name="Search"
         component={SearchPage}
         options={{
           headerShown: false,
         }}
-      />
+      /> */}
 
       <Tab.Screen
         name="AddPost"

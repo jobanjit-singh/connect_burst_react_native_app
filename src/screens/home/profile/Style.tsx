@@ -17,7 +17,8 @@ export const styles = StyleSheet.create({
         borderRadius: 20,
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: '#CCC'
+        backgroundColor: '#CCC',
+        overflow: 'hidden'
     },
     usernameTitle:{
         paddingVertical: 10,
@@ -26,7 +27,6 @@ export const styles = StyleSheet.create({
         fontWeight: 'bold'
     },
     profileDetailBaseContainer:{
-        flex: 1,
         flexDirection: 'row',
         paddingVertical: 10,
     },
@@ -56,5 +56,29 @@ export const styles = StyleSheet.create({
     editText: {
         color: '#00ABF0',
         fontWeight: 'bold'
+    },
+    postListBaseContainer:{
+        alignItems: 'center'
+    },
+    noPostContainer: {
+        alignItems: 'center'
+    },
+    noPostText: {
+        color: '#999',
+        fontWeight: 'bold'
+    },
+    itemBaseContainer:{
+        width: WIDTH / 1.1,
+        backgroundColor: '#333',
+        padding: 10,
+        borderRadius: 20,
+        overflow: 'hidden',
+        borderColor: '#00ABF077',
+        borderWidth: 1,
+        borderStyle: 'dashed'
+    },
+    captionText: {
+        color: '#FFF',
+        fontSize: 14,
     }
 })
